@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<title>weight converter</title>
+</head>
+<body>
+<div class="container">
+<div class="row">
+<div class="col-md-6 offset-md-3">
+<h1 class="display-4 text-center mb-3">weight converter</h1>
+<form >
+<div class="formgroup">
+<input id ="lbsinput"type="number" class="formcontrol" placeholder="Enter poundes">
+</div>
+</form>
+<div id="output">
+<div class="card card-primary mb-2">
+<div class="cardblock">
+<h4 >grams:</h4>
+<div  id ="gramsoutput"></div>
+</div>
+
+<div class="card card-success mb-2">
+    <div class="cardblock">
+    <h4 >kilograms:</h4>
+    <div  id ="kgoutput"></div>
+</div>
+
+<div class="card card-danger mb-2">
+    <div class="cardblock">
+    <h4 >ounces:</h4>
+    <div  id ="ozoutput"></div>
+</div>
+
+<style>body{
+    background: purple;
+}</style>
+
+</div>
+</div>
+</div>
+
+<script>
+    document.getElementById('output').style.visibility = "hidden";
+document.getElementById('lbsinput').addEventListener('input', function(e){
+    console.log(111111);
+    let pounds = e.target.value;
+
+    document.getElementById('output').style.visibility = 'visible';
+    document.getElementById('gramsoutput').innerHTML = pounds/0.00220246;
+
+    document.getElementById('kgoutput').innerHTML = pounds/2.2046;
+    document.getElementById('ozoutput').innerHTML = pounds * 16;
+
+})
+</script>
+</body>
+</html>
